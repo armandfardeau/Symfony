@@ -13,10 +13,10 @@ oc_platform_add:
 
 
 oc_platform_view_slug:
-    path:      /platform/{year}/{slug}.{format}
+    path:      /platform/{year}/{slug}.{_format}
     defaults:
         _controller: OCPlatformBundle:Advert:viewSlug
-        format:      html
+        _format:      html
     requirements:
         year: \d{4}
         format: html|xml
