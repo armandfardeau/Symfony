@@ -15,7 +15,7 @@ class AdvertController extends Controller
 
         return new Response($content);
     }
-    
+
     public function viewAction($id)
     {
         // $id vaut 5 si l'on a appelé l'URL /platform/advert/5
@@ -24,8 +24,8 @@ class AdvertController extends Controller
         // l'annonce correspondant à l'id $id.
         // Puis on passera l'annonce à la vue pour
         // qu'elle puisse l'afficher
-
-        return new Response("Affichage de l'annonce d'id : " . $id);
+        $content = $this->get('templating')->render('OCPlatformBundle:Advert:view.html.twig',array('id' => $id));
+        return new Response($content);
     }
 
     public function viewSlugAction($slug, $year, $format)
