@@ -25,10 +25,19 @@ class AdvertController extends Controller
 
     }
 
-    public function viewSlugAction($slug, $year, $_format)
+    public function addAction($id)
     {
-        $content = $this->get('templating')->render('@OCPlatform/Advert/viewSlug.html.twig', array('slug' => $slug, 'year' => $year, 'format' => $_format));
-        return new Response($content);
+
+    }
+
+    public function editAction($id)
+    {
+
+    }
+
+    public function deleteAction($id)
+    {
+
     }
 }
 
