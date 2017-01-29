@@ -18,14 +18,16 @@ class AdvertController extends Controller
 
     public function viewAction($id)
     {
-        // $id vaut 5 si l'on a appelé l'URL /platform/advert/5
+        // On veut avoir l'URL de l'annonce d'id 5.
+        $url = $this->get('router')->generate(
+            'oc_platform_view', // 1er argument : le nom de la route
+            array('id' => $id)    // 2e argument : les valeurs des paramètres
+        );
+        // $url vaut « /platform/advert/5 »
 
-        // Ici, on récupèrera depuis la base de données
-        // l'annonce correspondant à l'id $id.
-        // Puis on passera l'annonce à la vue pour
-        // qu'elle puisse l'afficher
-        $content = $this->get('templating')->render('OCPlatformBundle:Advert:view.html.twig',array('id' => $id));
+        $content = $this->get('templating')->render('OCPlatformBundle:Advert:view.html.twig',array('url' => $url));
         return new Response($content);
+
     }
 
     public function viewSlugAction($slug, $year, $_format)
