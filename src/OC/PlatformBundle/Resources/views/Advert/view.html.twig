@@ -4,10 +4,12 @@
     <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
 </head>
 <body>
-<h1>
-    <a href="{{ path('oc_platform_view', { 'id': id }) }}">
-        Lien vers l'annonce d'id {{ id }}
-    </a>
-</h1>
+<p>
+Affichage de l'annonce d'id : "{{ id }}"
+
+    {%if tag is not empty %}
+    , avec le tag : "{{ tag }}"
+    {% endif %}
+</p>
 </body>
 </html>
