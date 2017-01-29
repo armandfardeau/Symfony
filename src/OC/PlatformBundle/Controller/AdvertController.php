@@ -6,6 +6,8 @@ namespace OC\PlatformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
 
 class AdvertController extends Controller
 {
@@ -21,9 +23,10 @@ class AdvertController extends Controller
         // On veut avoir l'URL de l'annonce d'id 5.
         $url = $this->get('router')->generate(
             'oc_platform_view', // 1er argument : le nom de la route
-            array('id' => $id)    // 2e argument : les valeurs des paramètres
+            array('id' => $id),// 2e argument : les valeurs des paramètres
+            UrlGeneratorInterface::ABSOLUTE_URL
         );
-        // $url vaut « /platform/advert/5 »
+        
 
         $content = $this->get('templating')->render('OCPlatformBundle:Advert:view.html.twig',array('url' => $url));
         return new Response($content);
