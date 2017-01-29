@@ -16,4 +16,11 @@ class AdvertController extends Controller
 
         return new Response($content);
     }
+
+    public function byebyeworldAction()
+    {
+        $content = $this->get('templating')->render('OCPlatformBundle:Advert:byebyeworld.html.twig', array('nom' => 'Armand'));
+
+        return new Response($content);
+    }
 }
