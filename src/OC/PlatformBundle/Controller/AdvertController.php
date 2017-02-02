@@ -65,5 +65,14 @@ class AdvertController extends Controller
     {
 
     }
+
+    public function emailAction($id)
+    {
+        $content = $this->renderView('OCPlatformBundle:Advert:email.txt.twig', array(
+            'id' => $id,
+        ));
+
+        mail('moi@openclassrooms.com', 'Inscription OK', $content);
+    }
 }
 
