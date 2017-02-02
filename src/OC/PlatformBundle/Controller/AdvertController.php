@@ -101,6 +101,16 @@ class AdvertController extends Controller
         return $this->render('OCPlatformBundle:Advert:add.html.twig');
     }
 
+    /**
+     * @Route(
+     *     "/edit/{id}",
+     *     name="oc_platform_edit",
+     *     requirements={
+     *         "id": "\d+",
+     *     }
+     * )
+     */
+
 
     public function editAction($id, Request $request)
     {
