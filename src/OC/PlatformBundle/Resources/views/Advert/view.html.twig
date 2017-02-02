@@ -1,15 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
-</head>
-<body>
-<p>
-Affichage de l'annonce d'id : "{{ id }}"
+{# src/OC/PlatformBundle/Resources/view/Advert/view.html.twig #}
 
-    {%if tag is not empty %}
-    , avec le tag : "{{ tag }}"
-    {% endif %}
-</p>
-</body>
-</html>
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+    Lecture d'une annonce - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+    <h2>{{ advert.title }}</h2>
+    <i>Par {{ advert.author }}, le {{ advert.date|date('d/m/Y') }}</i>
+
+    <div class="well">
+        {{ advert.content }}
+    </div>
+
+    <p>
+        <a href="{{ path('oc_platform_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la liste
+        </a>
+        <a href="{{ path('oc_platform_edit', {'id': advert.id}) }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-edit"></i>
+            Modifier l'annonce
+        </a>
+        <a href="{{ path('oc_platform_delete', {'id': advert.id}) }}" class="btn btn-danger">
+            <i class="glyphicon glyphicon-trash"></i>
+            Supprimer l'annonce
+        </a>
+    </p>
+
+{% endblock %}
