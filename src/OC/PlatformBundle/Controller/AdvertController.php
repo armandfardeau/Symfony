@@ -7,12 +7,14 @@ namespace OC\PlatformBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class AdvertController extends Controller
 {
     /**
      * @Route(
      *     "/{page}",
+     *     name="oc_platform_home",
      *     defaults={"page": "1"},
      *     requirements={
      *         "page": "\d*",
@@ -53,6 +55,16 @@ class AdvertController extends Controller
         ));
     }
 
+    /**
+     * @Route(
+     *     "/advert/{id}",
+     *     name="oc_platform_view",
+     *     requirements={
+     *         "id": "\d+",
+     *     }
+     * )
+     */
+
     public function viewAction($id)
     {
         $advert = array(
@@ -68,6 +80,13 @@ class AdvertController extends Controller
         ));
     }
 
+    /**
+     * @Route("/add",
+     *     name="oc_platform_add",
+     * )
+     *
+     */
+
     public function addAction(Request $request)
     {
         // Si la requête est en POST, c'est que le visiteur a soumis le formulaire
@@ -81,6 +100,7 @@ class AdvertController extends Controller
         // Si on n'est pas en POST, alors on affiche le formulaire
         return $this->render('OCPlatformBundle:Advert:add.html.twig');
     }
+
 
     public function editAction($id, Request $request)
     {
@@ -102,6 +122,16 @@ class AdvertController extends Controller
             'advert' => $advert
         ));
     }
+
+    /**
+     * @Route(
+     *     "/delete/{id}",
+     *     name="oc_platform_delete",
+     *     requirements={
+     *         "id": "\d+",
+     *     }
+     * )
+     */
 
     public function deleteAction($id)
     {
