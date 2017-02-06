@@ -95,6 +95,7 @@ class AdvertController extends Controller
      */
     public function addAction(Request $request)
     {
+
         // Si la requête est en POST, c'est que le visiteur a soumis le formulaire
         if ($request->isMethod('POST')) {
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
