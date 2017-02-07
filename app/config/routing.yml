@@ -1,8 +1,3 @@
-azae_core:
-    resource: "@AzaeCoreBundle/Resources/config/routing.yml"
-    type:      annotation
-    prefix:   /
-
 oc_platform:
     resource: "@OCPlatformBundle/Controller"
     type:      annotation
