@@ -1,0 +1,3 @@
+azae_core_homepage:
+    path:     /
+    defaults: { _controller: AzaeCoreBundle:Default:index }
