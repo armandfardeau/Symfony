@@ -8,7 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="azae_core_home")
+     *
      */
     public function indexAction()
     {

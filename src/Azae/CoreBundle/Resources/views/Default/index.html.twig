@@ -3,12 +3,10 @@
 {% extends "@AzaeCore/layout.html.twig" %}
 
 {% block title %}
-    Accueil - {{ parent() }}
+    Accueil
 {% endblock %}
 
-{% block azaecore_body %}
-<a href="{{ path('oc_platform_home')}}">Route statique vers platform
-</a>
-  <h1>hello world Azae!</h1>
+{% block core_body %}
+<h1>Hello world</h1>
 {% endblock %}
 
