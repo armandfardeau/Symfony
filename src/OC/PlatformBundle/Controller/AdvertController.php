@@ -1,7 +1,4 @@
 <?php
-
-// src/OC/PlatformBundle/Controller/AdvertController.php
-
 namespace OC\PlatformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

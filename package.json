@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulpfile-install": "^0.2.0"
+  }
+}
